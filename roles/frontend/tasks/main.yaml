@@ -1,9 +1,9 @@
 #Creating frontend configurations with Ansible
 
-- name: configurate frontend server
-  hosts: frontend
-  become: yes
-  tasks:
+# - name: configurate frontend server
+#   hosts: frontend
+#   become: yes
+#   tasks:
     - name: install nginx package
       ansible.builtin.package:
         name: nginx

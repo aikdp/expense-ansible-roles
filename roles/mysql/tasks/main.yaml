@@ -1,12 +1,12 @@
 #Craeting MySQL with Ansible
 
-- name: Creating mysql configurations
-  hosts: mysql
-  become: yes
-  # vars:   # We are using roles  
-    # root_pass: ExpenseApp@1
-    # hosted_zone: mysql.telugudevops.online
-  tasks:
+# - name: Creating mysql configurations
+#   hosts: mysql
+#   become: yes
+#   # vars:   # We are using roles  
+#     # root_pass: ExpenseApp@1
+#     # hosted_zone: mysql.telugudevops.online
+#   tasks:
     - name: Install boto3 and botocore for Python 3.9 specifically, using the 'pip3.9' executable
       ansible.builtin.pip:
         name: 

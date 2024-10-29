@@ -1,11 +1,11 @@
 #Creating backend app configuration using ANSIBLE
-- name: Creating backend configuration
-  hosts: backend
-  become: yes
-  # vars:
-  #   mysql_root_password: ExpenseApp@1
-  #   login_host: mysql.telugudevops.online
-  tasks:
+# - name: Creating backend configuration
+#   hosts: backend
+#   become: yes
+#   # vars:
+#   #   mysql_root_password: ExpenseApp@1
+#   #   login_host: mysql.telugudevops.online
+#   tasks:
     - name: ansible to install PyMySQL	#to connect mysql DB, need PyMySQL dependency
       ansible.builtin.pip:
         name: 

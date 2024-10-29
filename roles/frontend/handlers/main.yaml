@@ -1,5 +1,5 @@
 #Handlers or notifiers in Ansible Frontend 
- - name: Restart service
-   ansible.builtin.systemd_service:
+ - name: Restart nginx
+   ansible.builtin.service:
       name: nginx
       state: restarted

@@ -1,0 +1,6 @@
+#creating backend configurations using ANSIBLE ROLES
+- name: backend configurations 
+  hosts: backend
+  become: yes
+  roles:
+  - backend

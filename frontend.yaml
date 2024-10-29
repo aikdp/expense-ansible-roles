@@ -1,0 +1,7 @@
+#Craeting MySQL configuretion using Ansible Roles:
+
+- name: Configure frontend Server
+  hosts: frontend
+  become: yes
+  roles:
+  - frontend

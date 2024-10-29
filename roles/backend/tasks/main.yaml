@@ -55,7 +55,7 @@
         chdir: /app
 
     - name: Copy backend service file
-      ansible.builtin.copy:
+      ansible.builtin.template:
         src: backend.service.j2
         dest: /etc/systemd/system/backend.service
         remote_src: yes

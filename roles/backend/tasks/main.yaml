@@ -33,7 +33,6 @@
       ansible.builtin.user:
         name: expense
 
-    
     #create common for backend and frontend
     - name: Run tasks form common role
       ansible.builtin.import_role:

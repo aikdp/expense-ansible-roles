@@ -18,26 +18,34 @@
     #   ansible.builtin.command: rm -rf /usr/share/nginx/html/*
 
       
-    - name:  remove default nginx content
-      ansible.builtin.file:
-        path: /usr/share/nginx/html/*
-        state: absent
+    # - name:  remove default nginx content
+    #   ansible.builtin.file:
+    #     path: /usr/share/nginx/html/*
+    #     state: absent
 
-    - name: carete html directory
-      ansible.builtin.file:
-        path: /usr/share/nginx/html
-        state: directory
 
-    - name: Download frontend content
-      ansible.builtin.get_url:
-        url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
-        dest: /tmp/frontend.zip
+    #create common for backend and frontend
+    - name: Run tasks form common role
+      ansible.builtin.import_role:
+        name: common
+        tasks_from: app-pre-req
 
-    - name: Unarchive a file frontend content
-      ansible.builtin.unarchive:
-        src: /tmp/frontend.zip
-        dest: /usr/share/nginx/html
-        remote_src: yes
+
+    # - name: carete html directory
+    #   ansible.builtin.file:
+    #     path: /usr/share/nginx/html
+    #     state: directory
+
+    # - name: Download frontend content
+    #   ansible.builtin.get_url:
+    #     url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+    #     dest: /tmp/frontend.zip
+
+    # - name: Unarchive a file frontend content
+    #   ansible.builtin.unarchive:
+    #     src: /tmp/frontend.zip
+    #     dest: /usr/share/nginx/html
+    #     remote_src: yes
 
     - name: Copy frontend service
       ansible.builtin.template:

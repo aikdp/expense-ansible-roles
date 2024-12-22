@@ -1,0 +1,18 @@
+#common tasks
+- name:  remove default content
+  ansible.builtin.file:
+    path: "{{ app_location }}"
+    state: absent
+  ignore_errors: true
+
+- name: "Create {{ app_location }} directory"
+  ansible.builtin.file:
+    path: "{{ app_location }}"
+    state: directory
+
+- name: "Extract {{ component }} code"
+  ansible.builtin.unarchive: 
+    src: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ component }}-v2.zip"
+    dest: "{{ app_location }}"
+    remote_src: yes    #Set to true to indicate the archived file is already on the remote system and not local to the Ansible controller.
+

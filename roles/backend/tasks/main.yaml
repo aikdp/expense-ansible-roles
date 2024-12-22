@@ -33,21 +33,28 @@
       ansible.builtin.user:
         name: expense
 
-    - name: Create app directory
-      ansible.builtin.file:
-        path: /app
-        state: directory
-      
-    - name: downlaod the backend code
-      ansible.builtin.get_url:
-        url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
-        dest: /tmp/backend.zip
+    
+    #create common for backend and frontend
+    - name: Run tasks form common role
+      ansible.builtin.import_role:
+        name: common
+        tasks_from: app-pre-req
 
-    - name: Extract code
-      ansible.builtin.unarchive: 
-        src: /tmp/backend.zip
-        dest: /app
-        remote_src: yes    #Set to true to indicate the archived file is already on the remote system and not local to the Ansible controller.
+    # - name: Create app directory
+    #   ansible.builtin.file:
+    #     path: /app
+    #     state: directory
+      
+    # - name: downlaod the backend code
+    #   ansible.builtin.get_url:
+    #     url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+    #     dest: /tmp/backend.zip
+
+    # - name: Extract code
+    #   ansible.builtin.unarchive: 
+    #     src: /tmp/backend.zip
+    #     dest: /app
+    #     remote_src: yes    #Set to true to indicate the archived file is already on the remote system and not local to the Ansible controller.
 
     - name: install npm dependencies
       ansible.builtin.command: npm install
@@ -87,5 +94,5 @@
         daemon_reload: true
         name: backend
         state: restarted
-        # enabled: true
+        enabled: true
         

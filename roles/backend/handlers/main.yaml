@@ -1,0 +1,9 @@
+#Handlers or notifiers in Ansible backend
+
+  - name: Start backend service
+    ansible.builtin.systemd_service:
+      daemon_reload: true
+      name: backend
+      state: restarted
+      enabled: true
+      

@@ -1,0 +1,3 @@
+#Frontend is depending on tasks form common role
+dependencies:
+  - role: common

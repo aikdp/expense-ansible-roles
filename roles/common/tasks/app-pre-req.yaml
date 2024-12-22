@@ -1,15 +1,18 @@
 #common tasks
+#Removing defaexisting content
 - name:  remove default content
   ansible.builtin.file:
     path: "{{ app_location }}"
     state: absent
   ignore_errors: true
 
+#craete directory
 - name: "Create {{ app_location }} directory"
   ansible.builtin.file:
     path: "{{ app_location }}"
     state: directory
 
+#Downlod the code
 - name: "Extract {{ component }} code"
   ansible.builtin.unarchive: 
     src: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ component }}-v2.zip"

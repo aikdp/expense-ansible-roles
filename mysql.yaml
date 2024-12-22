@@ -2,5 +2,7 @@
 - name: Configure MySQL Server
   hosts: mysql
   become: yes
+  vars_files:   #We are craeting file and will encrypting it using VAULT
+  - /var/expense/credentials.mysql    #Now comment VAR in variables
   roles:
   - mysql

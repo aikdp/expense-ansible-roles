@@ -1,0 +1,3 @@
+#Backend is depending on tasks from common role
+dependencies:
+  - role: common

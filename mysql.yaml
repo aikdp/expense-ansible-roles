@@ -1,5 +1,4 @@
 #Craeting MySQL configuretion using Ansible Roles:
-
 - name: Configure MySQL Server
   hosts: mysql
   become: yes

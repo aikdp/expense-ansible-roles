@@ -5,7 +5,7 @@
   connection: local
   vars:
     subnet_id: "subnet-0e2f888f786957beb"
-    sg_group_id: "sg-09805cbd3e2c45d5b"
+    sg_group_id: "sg-0f487d954cbe820ef"
     ami_id: "ami-09c813fb71547fc4f"
     zone_name: "telugudevops.online"
   tasks:

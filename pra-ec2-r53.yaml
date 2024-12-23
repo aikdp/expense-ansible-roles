@@ -2,6 +2,7 @@
 - name: Create ec2 instances and r53 reocrds
   hosts: local
   connection: local
+  gather_facts: no
   vars:
     subnet_id: "subnet-0e2f888f786957beb"
     sg_group_id: "sg-0f487d954cbe820ef"
@@ -33,12 +34,12 @@
     #   no_log: true
     #   register: aws_ec2_key_pair
 
-    # - name: Ensure key pair exists
-    #   amazon.aws.ec2_key:
-    #     name: "{{ key_pair_name }}"
-    #     public_key_file: "{{ public_key_path }}"
-    #     region: "{{ aws_region }}"
-    #   register: key_pair
+    - name: Ensure key pair exists
+      amazon.aws.ec2_key:
+        name: "{{ key_pair_name }}"
+        public_key_file: "{{ public_key_path }}"
+        region: "{{ aws_region }}"
+      register: key_pair
 
 
     - name: create ec2 instances

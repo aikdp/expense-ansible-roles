@@ -16,6 +16,12 @@
         - botocore
         - PyMySQL
         executable: pip3.9
+
+    - name: create key pair using provided key_material
+      amazon.aws.ec2_key:
+        name: openvpn
+        key_material: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDW4spPmTKFY4b8fEQ5gfgWH349+cn9Zzvs/I+T+r2wd kdpra@KDP'
+
     - name: create ec2 instances
       amazon.aws.ec2_instance:
         name: "{{ item }}"

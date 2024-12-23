@@ -3,7 +3,7 @@
   hosts: local
   connection: local
   vars:
-    ssh_key: "~/.ssh/openvpn/"
+    ssh_key: "openvpn"
     subnet_id: "subnet-0e2f888f786957beb"
     sg_group_id: "sg-0f487d954cbe820ef"
     ami_id: "ami-09c813fb71547fc4f"

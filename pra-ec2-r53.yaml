@@ -79,7 +79,7 @@
         state: started
 
     - name: Add public key to authorized_keys on EC2 instance
-      ansible.builtin.shell: |
+      ansible.builtin.shell: 
         echo "{{ lookup('file', public_key_path) }}" >> "~/.ssh/authorized_keys"
       args:
         executable: /bin/bash

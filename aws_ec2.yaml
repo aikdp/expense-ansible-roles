@@ -27,3 +27,6 @@ compose:
 
 
 # #RUN:   ansible-inventory -i aws_ec2.yml --graph
+
+#Command ofr serial and forks dynamcially inventory to install nginx:
+## ansible-playbook -i aws_ec2.yaml -e ansible_user=ec2-user -e ansible_password=DevOps321 nginx.yaml

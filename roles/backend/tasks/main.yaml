@@ -35,7 +35,8 @@
 
     #create common for backend and frontend
     - name: Run tasks form common role
-      tags: deployement
+      tags: 
+      - deployement
       ansible.builtin.import_role:
         name: common
         tasks_from: app-pre-req
@@ -57,7 +58,8 @@
     #     remote_src: yes    #Set to true to indicate the archived file is already on the remote system and not local to the Ansible controller.
 
     - name: install npm dependencies
-      tags: deployement
+      tags: 
+      - deployment
       ansible.builtin.command: npm install
       args:
         chdir: /app
@@ -76,7 +78,8 @@
     #   executable: pip3.9
 
     - name: load or import mysql schema
-      tags: deployment
+      tags: 
+      - deployment
       community.mysql.mysql_db:
         login_user: root
         login_password: "{{ root_pass }}"

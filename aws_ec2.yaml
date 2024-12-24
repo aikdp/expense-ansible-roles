@@ -4,12 +4,12 @@
   tasks:
   - name: ansible to install python libraries	#to connect mysql DB, need PyMySQL dependency
     ansible.builtin.pip:
-    name: 
-    - PyMySQL
-    - cryptography    
-    - boto3
-    - botocore
-    executable: pip3.9
+      name: 
+      - PyMySQL
+      - cryptography    
+      - boto3
+      - botocore
+      executable: pip3.9
 
 # #Dynamic Inventory of running nginx 
 # plugin: amazon.aws.aws_ec2

@@ -1,7 +1,7 @@
 #Handlers or notifiers in Ansible backend
 
   - name: Start backend service
-    tags: deployement
+    # tags: deployement
     ansible.builtin.systemd_service:
       daemon_reload: true
       name: backend

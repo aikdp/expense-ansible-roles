@@ -1,6 +1,7 @@
 - name: nginx install and run
   hosts: all    #put all for dynamically connecting inventory
   become: yes  ##takes sude access#check and run without root first then include root next
+  serial: 3
   tasks:
   - name: install nginx
     ansible.builtin.package:  #you can search for modules in google(ansible nginx module) heterogenous module that can work for all distributions

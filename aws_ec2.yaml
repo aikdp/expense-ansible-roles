@@ -16,7 +16,7 @@ plugin: amazon.aws.aws_ec2
 regions:
   - us-east-1
 filters:
-  tag:Name: ansible
+  tag:Name: nginx
   # All instances with their state as `running`
   instance-state-name: running
 hostnames:

@@ -1,4 +1,4 @@
-mysql_root: ExpenseApp@1  #here i am using Vault to store the credentials
+root_pass: ExpenseApp@1  #here i am using Vault to store the credentials
 hosted_zone: mysql.telugudevops.online
 app_location: /app
 component: backend

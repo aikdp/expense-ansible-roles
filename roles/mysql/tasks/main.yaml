@@ -14,30 +14,30 @@
         - botocore
         - PyMySQL
         executable: pip3.9
-    - name: install mysql sever
-      ansible.builtin.package:
-        name: mysql-server
-        state: present
-    - name: Enable and start service mysqld
-      ansible.builtin.service:
-        name: mysqld
-        state: started
-        enabled: yes
-    - name: Check MySQL root password setup or not
-      community.mysql.mysql_info:
-        login_user: root
-        login_password: "{{ root_pass }}"
-        login_host: "{{ hosted_zone }}"
-      ignore_errors: true
-      register: mysql_info
+    # - name: install mysql sever
+    #   ansible.builtin.package:
+    #     name: mysql-server
+    #     state: present
+    # - name: Enable and start service mysqld
+    #   ansible.builtin.service:
+    #     name: mysqld
+    #     state: started
+    #     enabled: yes
+    # - name: Check MySQL root password setup or not
+    #   community.mysql.mysql_info:
+    #     login_user: root
+    #     login_password: "{{ root_pass }}"
+    #     login_host: "{{ hosted_zone }}"
+    #   ignore_errors: true
+    #   register: mysql_info
 
-    - name: print mysql info
-      ansible.builtin.debug:
-        msg: "{{ mysql_info }}"
+    # - name: print mysql info
+    #   ansible.builtin.debug:
+    #     msg: "{{ mysql_info }}"
 
-    - name: set root pasword to MySQL 
-      ansible.builtin.command: "mysql_secure_installation --set-root-pass {{ root_pass }}"
-      when: mysql_info.failed is true
+    # - name: set root pasword to MySQL 
+    #   ansible.builtin.command: "mysql_secure_installation --set-root-pass {{ root_pass }}"
+    #   when: mysql_info.failed is true
       
 
 

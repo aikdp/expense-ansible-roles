@@ -76,8 +76,8 @@
     - name: load or import mysql schema
       community.mysql.mysql_db:
         login_user: root
-        login_password: "{{ mysql_root_password }}"
-        login_host: "{{ login_host }}"
+        login_password: "{{ root_pass }}"
+        login_host: "{{ hosted_zone }}"
         name: all
         state: import
         target: /app/schema/backend.sql

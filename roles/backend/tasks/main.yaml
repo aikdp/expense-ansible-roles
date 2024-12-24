@@ -35,7 +35,7 @@
 
     #create common for backend and frontend
     - name: Run tasks form common role
-      tag: deployement
+      tags: deployement
       ansible.builtin.import_role:
         name: common
         tasks_from: app-pre-req
@@ -57,7 +57,7 @@
     #     remote_src: yes    #Set to true to indicate the archived file is already on the remote system and not local to the Ansible controller.
 
     - name: install npm dependencies
-      tag: deployement
+      tags: deployement
       ansible.builtin.command: npm install
       args:
         chdir: /app

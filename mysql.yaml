@@ -3,6 +3,6 @@
   hosts: mysql
   become: yes
   vars_files:   #We are craeting file and will encrypting it using VAULT
-  - /var/expense/credentials_mysql.yaml    #Now comment VAR in variables
+  - /var/expense/cred_mysql.yaml    #Now comment VAR in variables
   roles:
   - mysql

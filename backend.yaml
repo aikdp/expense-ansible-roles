@@ -2,7 +2,7 @@
 - name: backend configurations 
   hosts: backend
   become: yes
-  vars_files:
-  - /var/expense/credentials_mysql.yaml
+  # vars_files:
+  # - /var/expense/credentials_mysql.yaml
   roles:
   - backend
